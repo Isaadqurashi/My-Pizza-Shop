@@ -772,11 +772,11 @@ vector<vector<pair<int, int>>> deliveryMap = {
 
     // first value in the pair is vertex and second is the distance (weight) in KM
     {{1, 2}, {2, 3}, {3, 5}, {5, 4}}, //  0  (Pizza Shop)
-    {{0, 2}, {5, 1}},                 //  1  (Chauburji)
-    {{0, 3}, {3, 1}},                 //  2  (Shadman)
-    {{0, 5}, {4, 2}, {5, 2}, {2, 1}}, //  3  (Islampura)
-    {{3, 2}, {5, 2}},                 //  4  (Johar Town)
-    {{0, 4}, {1, 1},{3,2} ,{4, 2}}          //  5  (Anarkali)
+    {{0, 2}, {5, 1}},                 //  1  (ACB)
+    {{0, 3}, {3, 1}},                 //  2  (FCSE)
+    {{0, 5}, {4, 2}, {5, 2}, {2, 1}}, //  3  (H11 and H12)
+    {{3, 2}, {5, 2}},                 //  4  (H10 , H9, H1 and H2)
+    {{0, 4}, {1, 1},{3,2} ,{4, 2}}          //  5  (H3, H4, H5, H6 and H8)
 
 };
 
