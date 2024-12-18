@@ -2,8 +2,6 @@
 const int infinity = INT_MAX;
 using namespace std;
 
-// Pizza Shop Ordering Management System
-
 // Defining Data Types
 
 struct customer
