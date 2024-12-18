@@ -1030,6 +1030,10 @@ int main()
         cout << "The Total Earnings are : " << totalx << endl;
         }
         break;
+        default:
+           cout <<"This Option is not available right now! \n";
+           cout << "Your Choice must be between 0-16 \n";
+           break;
         }
 
     } while (option != 0);
