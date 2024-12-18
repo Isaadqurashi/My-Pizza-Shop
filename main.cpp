@@ -164,8 +164,7 @@ servedCustomer *displayAllServedOrders(servedCustomer *root)
 
 int height(servedCustomer *root)
 {
-    if (!root)
-        return 0;
+    if (!root) return 0;
 
     return max(height(root->left), height(root->right)) + 1;
 }
@@ -174,8 +173,7 @@ int height(servedCustomer *root)
 
 int balanceFactor(servedCustomer *root)
 {
-    if (!root)
-        return 0;
+    if (!root) return 0;
 
     return height(root->left) - height(root->right);
 }
@@ -345,12 +343,9 @@ servedCustomer *insertion(int age, string name, int quantity, string pizzaName, 
 
 servedCustomer *deleteNode(servedCustomer *root, string key)
 {
-    if (root == NULL)
-        return root;
-    else if (key < root->name)
-        root->left = deleteNode(root->left, key);
-    else if (key > root->name)
-        root->right = deleteNode(root->right, key);
+    if (root == NULL) return root;
+    else if (key < root->name) root->left = deleteNode(root->left, key);
+    else if (key > root->name) root->right = deleteNode(root->right, key);
     else
     {
         // if deleteroot has one child or zero child
@@ -410,10 +405,7 @@ servedCustomer *deleteNode(servedCustomer *root, string key)
 void deleteAllServedCustomers(servedCustomer *root)
 {
 
-    while (root)
-    {
-        root = deleteNode(root, root->name);
-    }
+    while (root) root = deleteNode(root, root->name);
 
     cout << "The Served Customer's List is Cleared " << endl;
 }
@@ -458,10 +450,7 @@ void placeOrderTakeAwayCustomer(int age, string name, string pizzaName, int quan
 }
 void serveOrderTakeAwayCustomer()
 {
-    if (myPizzaShop->nextTakeAwayCustomer == NULL)
-    {
-        cout << "No Take Away Customer to Serve" << endl;
-    }
+    if (myPizzaShop->nextTakeAwayCustomer == NULL) cout << "No Take Away Customer to Serve" << endl;
     else
     {
         // serving the first customer
@@ -513,10 +502,7 @@ void placeOrderDineInCustomer(int age, string name, string pizzaName, int quanti
 }
 void serveOrderDineInCustomer()
 {
-    if (myPizzaShop->nextDineInCustomer == NULL)
-    {
-        cout << "No Dine-In Customer to Serve" << endl;
-    }
+    if (myPizzaShop->nextDineInCustomer == NULL) cout << "No Dine-In Customer to Serve" << endl;
     else
     {
         // serving the first customer
@@ -568,10 +554,7 @@ void placeOrderHomeDeliveryCustomer(int age, string name, string pizzaName, int 
 
 void serveOrderHomeDeliveryCustomer()
 {
-    if (myPizzaShop->nextHomeDeliveryCustomer == NULL)
-    {
-        cout << "No Home Delivery Customer to Serve" << endl;
-    }
+    if (myPizzaShop->nextHomeDeliveryCustomer == NULL) cout << "No Home Delivery Customer to Serve" << endl;
     else
     {
 
@@ -635,10 +618,7 @@ void serveAllOrders()
 
 void displayAllOrdersTakeAwayCustomers()
 {
-    if (myPizzaShop->nextTakeAwayCustomer == NULL)
-    {
-        cout << "There is no Order for Walking Customer till yet" << endl;
-    }
+    if (myPizzaShop->nextTakeAwayCustomer == NULL) cout << "There is no Order for Walking Customer till yet" << endl;
     else
     {
         takeAwayCustomer *traversal = myPizzaShop->nextTakeAwayCustomer;
@@ -660,10 +640,7 @@ void displayAllOrdersTakeAwayCustomers()
 
 void displayAllOrdersHomeDeliveryCustomers()
 {
-    if (myPizzaShop->nextHomeDeliveryCustomer == NULL)
-    {
-        cout << "There is no Order for Home Delivery Customer till yet" << endl;
-    }
+    if (myPizzaShop->nextHomeDeliveryCustomer == NULL) cout << "There is no Order for Home Delivery Customer till yet" << endl;
     else
     {
         homeDeliveryCustomer *traversal = myPizzaShop->nextHomeDeliveryCustomer;
@@ -687,10 +664,7 @@ void displayAllOrdersHomeDeliveryCustomers()
 
 void displayAllOrdersDineInCustomers()
 {
-    if (myPizzaShop->nextDineInCustomer == NULL)
-    {
-        cout << "There is no Order for Dine-In Customer till yet" << endl;
-    }
+    if (myPizzaShop->nextDineInCustomer == NULL) cout << "There is no Order for Dine-In Customer till yet" << endl;
     else
     {
         dineInCustomer *traversal = myPizzaShop->nextDineInCustomer;
