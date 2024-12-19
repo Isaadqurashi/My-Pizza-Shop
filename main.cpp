@@ -735,7 +735,7 @@ double totalEarnings(servedCustomer *root){
 
 // making a graph for the available delivery options
 
-//                           0              1             2        3          4           5
+//                           0              1             2        3          4                  5
 string deliveryPoints[] = {"PizzaSHOP", "ACB", "FCSE", "H11 and H120", "H10, H9, H1 and H2", "H3, H4, H5, H6 and H8"};
 
 // first value in the pair is vertex and second is the distance (weight) in KM
