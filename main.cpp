@@ -410,13 +410,10 @@ void deleteAllServedCustomers(servedCustomer *root)
 
 // Now defining Order Placing and Serving of Take Away Customer
 // Based on : Older person will be served first (PRIORITY QUEUE)
-vector<string> orders;
-vector<int> order_quantity;
+
 void placeOrderTakeAwayCustomer(int age, string name, string pizzaName, int quantity, double bill)
 {
     // making new Customer
-    orders.push_back(pizzaName);
-    order_quantity.push_back(quantity);
     currentTakeAwayCustomer = new takeAwayCustomer(age, name, quantity, pizzaName, bill);
 
     if (myPizzaShop->nextTakeAwayCustomer == NULL)
@@ -447,13 +444,7 @@ void placeOrderTakeAwayCustomer(int age, string name, string pizzaName, int quan
             currentTakeAwayCustomer->next = NULL;
         }
     }
-    cout << "Your Order has been Placed MR/MRS " << name << '\n';
-    cout << "Your Orders Are: \n";
-    cout << "Pizza               Quantity\n";
-    for(int i = 0; i < orders.size() ; i++) {
-        cout << i+1 << ". " << orders[i] << "       " << order_quantity[i] << '\n'; 
-    }
-    cout << "Your total bill is " << bill << endl;
+    cout << "Your Order has been Placed MR/MRS " << name << " and your order is " << pizzaName << " with " << quantity << " quantity and total bill is " << bill << endl;
 }
 void serveOrderTakeAwayCustomer()
 {
@@ -826,15 +817,6 @@ int main()
 
     cout << "Located at " << myPizzaShop->address << endl;
     // now starting the main program
-    int age, quantity, pizzaIndex;
-    double bill = 0.0;
-    string address;
-    string name;
-    // vector<string> orders;
-    cout << "Enter the name of the customer: ";
-    cin >> name;
-    cout << "Enter the age of the customer: ";
-    cin >> age;
     do{
         cout << "=========================================================================" << endl;
         cout << "=========================================================================" << endl;
@@ -872,11 +854,19 @@ int main()
         cin >> option;
 
         // for taking input of Customer Details
+        int age, quantity, pizzaIndex;
+        double bill;
+        string address;
+        string name;
 
         switch (option)
         {
         case 1:
         { // placing order for take away customer
+            cout << "Enter the name of the customer: ";
+            cin >> name;
+            cout << "Enter the age of the customer: ";
+            cin >> age;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
@@ -890,7 +880,7 @@ int main()
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
 
-            bill += quantity * myPizzaShop->price[pizzaIndex];
+            bill = quantity * myPizzaShop->price[pizzaIndex];
             placeOrderTakeAwayCustomer(age, name, myPizzaShop->menu[pizzaIndex], quantity, bill);
         }
         break;
@@ -918,10 +908,10 @@ int main()
             // setting the delivery address of the Customer
             address = deliveryPoints[optionDelivery];
 
-            // cout << "Enter the name of the customer: ";
-            // cin >> name;
-            // cout << "Enter the age of the customer: ";
-            // cin >> age;
+            cout << "Enter the name of the customer: ";
+            cin >> name;
+            cout << "Enter the age of the customer: ";
+            cin >> age;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
@@ -937,7 +927,7 @@ int main()
 
             int deliveryChargesPerKM = 50;
             int deliveryCharges = deliveryChargesPerKM * distanceFromShop[optionDelivery];
-            bill += quantity * myPizzaShop->price[pizzaIndex] + deliveryCharges;
+            bill = quantity * myPizzaShop->price[pizzaIndex] + deliveryCharges;
 
             // distance from the shop
             int distanceFromTheShop = distanceFromShop[optionDelivery];
@@ -948,10 +938,10 @@ int main()
         case 3:
         { // placing order for Dine-in customer
 
-            // cout << "Enter the name of the customer: ";
-            // cin >> name;
-            // cout << "Enter the age of the customer: ";
-            // cin >> age;
+            cout << "Enter the name of the customer: ";
+            cin >> name;
+            cout << "Enter the age of the customer: ";
+            cin >> age;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
@@ -964,7 +954,7 @@ int main()
             }
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
-            bill += quantity * myPizzaShop->price[pizzaIndex];
+            bill = quantity * myPizzaShop->price[pizzaIndex];
 
             placeOrderDineInCustomer(age, name, myPizzaShop->menu[pizzaIndex], quantity, bill);
         }
