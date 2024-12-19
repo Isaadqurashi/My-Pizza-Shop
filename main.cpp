@@ -410,10 +410,13 @@ void deleteAllServedCustomers(servedCustomer *root)
 
 // Now defining Order Placing and Serving of Take Away Customer
 // Based on : Older person will be served first (PRIORITY QUEUE)
-
+vector<string> orders;
+vector<int> order_quantity;
 void placeOrderTakeAwayCustomer(int age, string name, string pizzaName, int quantity, double bill)
 {
     // making new Customer
+    orders.push_back(pizzaName);
+    order_quantity.push_back(quantity);
     currentTakeAwayCustomer = new takeAwayCustomer(age, name, quantity, pizzaName, bill);
 
     if (myPizzaShop->nextTakeAwayCustomer == NULL)
@@ -444,7 +447,13 @@ void placeOrderTakeAwayCustomer(int age, string name, string pizzaName, int quan
             currentTakeAwayCustomer->next = NULL;
         }
     }
-    cout << "Your Order has been Placed MR/MRS " << name << " and your order is " << pizzaName << " with " << quantity << " quantity and total bill is " << bill << endl;
+    cout << "Your Order has been Placed MR/MRS " << name << '\n';
+    cout << "Your Orders Are: \n";
+    cout << "Pizza               Quantity\n";
+    for(int i = 0; i < orders.size() ; i++) {
+        cout << i+1 << ". " << orders[i] << "       " << order_quantity[i] << '\n'; 
+    }
+    cout << "Your total bill is " << bill << endl;
 }
 void serveOrderTakeAwayCustomer()
 {
@@ -821,6 +830,7 @@ int main()
     double bill = 0.0;
     string address;
     string name;
+    // vector<string> orders;
     cout << "Enter the name of the customer: ";
     cin >> name;
     cout << "Enter the age of the customer: ";
