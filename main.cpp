@@ -867,14 +867,14 @@ int main()
             cin >> name;
             cout << "Enter the age of the customer: ";
             cin >> age;
-            cout << "Enter the quantity of the pizza: ";
-            cin >> quantity;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
             }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
+            cout << "Enter the quantity of the pizza: ";
+            cin >> quantity;
 
             bill = quantity * myPizzaShop->price[pizzaIndex];
             placeOrderTakeAwayCustomer(age, name, myPizzaShop->menu[pizzaIndex], quantity, bill);
@@ -908,14 +908,14 @@ int main()
             cin >> name;
             cout << "Enter the age of the customer: ";
             cin >> age;
-            cout << "Enter the quantity of the pizza: ";
-            cin >> quantity;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
             }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
+            cout << "Enter the quantity of the pizza: ";
+            cin >> quantity;
 
             int deliveryChargesPerKM = 50;
             int deliveryCharges = deliveryChargesPerKM * distanceFromShop[optionDelivery];
@@ -934,14 +934,14 @@ int main()
             cin >> name;
             cout << "Enter the age of the customer: ";
             cin >> age;
-            cout << "Enter the quantity of the pizza: ";
-            cin >> quantity;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
             }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
+            cout << "Enter the quantity of the pizza: ";
+            cin >> quantity;
 
             bill = quantity * myPizzaShop->price[pizzaIndex];
             placeOrderDineInCustomer(age, name, myPizzaShop->menu[pizzaIndex], quantity, bill);
