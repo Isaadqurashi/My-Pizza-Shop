@@ -817,6 +817,14 @@ int main()
 
     cout << "Located at " << myPizzaShop->address << endl;
     // now starting the main program
+    int age, quantity, pizzaIndex;
+    double bill = 0.0;
+    string address;
+    string name;
+    cout << "Enter the name of the customer: ";
+    cin >> name;
+    cout << "Enter the age of the customer: ";
+    cin >> age;
     do{
         cout << "=========================================================================" << endl;
         cout << "=========================================================================" << endl;
@@ -854,19 +862,11 @@ int main()
         cin >> option;
 
         // for taking input of Customer Details
-        int age, quantity, pizzaIndex;
-        double bill;
-        string address;
-        string name;
 
         switch (option)
         {
         case 1:
         { // placing order for take away customer
-            cout << "Enter the name of the customer: ";
-            cin >> name;
-            cout << "Enter the age of the customer: ";
-            cin >> age;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
@@ -880,7 +880,7 @@ int main()
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
 
-            bill = quantity * myPizzaShop->price[pizzaIndex];
+            bill += quantity * myPizzaShop->price[pizzaIndex];
             placeOrderTakeAwayCustomer(age, name, myPizzaShop->menu[pizzaIndex], quantity, bill);
         }
         break;
@@ -908,10 +908,10 @@ int main()
             // setting the delivery address of the Customer
             address = deliveryPoints[optionDelivery];
 
-            cout << "Enter the name of the customer: ";
-            cin >> name;
-            cout << "Enter the age of the customer: ";
-            cin >> age;
+            // cout << "Enter the name of the customer: ";
+            // cin >> name;
+            // cout << "Enter the age of the customer: ";
+            // cin >> age;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
@@ -927,7 +927,7 @@ int main()
 
             int deliveryChargesPerKM = 50;
             int deliveryCharges = deliveryChargesPerKM * distanceFromShop[optionDelivery];
-            bill = quantity * myPizzaShop->price[pizzaIndex] + deliveryCharges;
+            bill += quantity * myPizzaShop->price[pizzaIndex] + deliveryCharges;
 
             // distance from the shop
             int distanceFromTheShop = distanceFromShop[optionDelivery];
@@ -938,10 +938,10 @@ int main()
         case 3:
         { // placing order for Dine-in customer
 
-            cout << "Enter the name of the customer: ";
-            cin >> name;
-            cout << "Enter the age of the customer: ";
-            cin >> age;
+            // cout << "Enter the name of the customer: ";
+            // cin >> name;
+            // cout << "Enter the age of the customer: ";
+            // cin >> age;
             cout << "Our Menu is as follows: " << endl;
             for (int i = 1; i <= 10; i++){
                 cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
@@ -954,8 +954,8 @@ int main()
             }
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
+            bill += quantity * myPizzaShop->price[pizzaIndex];
 
-            bill = quantity * myPizzaShop->price[pizzaIndex];
             placeOrderDineInCustomer(age, name, myPizzaShop->menu[pizzaIndex], quantity, bill);
         }
         break;
