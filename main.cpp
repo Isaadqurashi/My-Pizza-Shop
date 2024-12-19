@@ -736,7 +736,7 @@ double totalEarnings(servedCustomer *root){
 // making a graph for the available delivery options
 
 //                           0              1             2        3          4           5
-string deliveryPoints[] = {"PizzaSHOP", "Chauburji", "Shadman", "Islampura", "JoharTown", "Anarkali"};
+string deliveryPoints[] = {"PizzaSHOP", "ACB", "FCSE", "H11 and H120", "H10, H9, H1 and H2", "H3, H4, H5, H6 and H8"};
 
 // first value in the pair is vertex and second is the distance (weight) in KM
 
@@ -808,27 +808,19 @@ int main()
     myPizzaShop->price = new int[11]{0, 2000, 2500, 2400, 2200, 2700, 2000, 2100, 3000, 3000, 2800};
 
     int option = -99;
+    
+    cout << "=========================================================================" << endl;
+    cout << "=========================================================================" << endl;
+    cout << "                            " << myPizzaShop->shopName << "              " << endl;
+    cout << "=========================================================================" << endl;
+    cout << "=========================================================================" << endl;
 
+    cout << "Located at " << myPizzaShop->address << endl;
     // now starting the main program
-    do
-    {
-
+    do{
         cout << "=========================================================================" << endl;
         cout << "=========================================================================" << endl;
-        cout << "                            " << myPizzaShop->shopName << "              " << endl;
-        cout << "=========================================================================" << endl;
-        cout << "=========================================================================" << endl;
-
-        cout << "Located at " << myPizzaShop->address << endl;
-        cout << "Our Menu is as follows: " << endl;
-        for (int i = 1; i <= 10; i++)
-        {
-            cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
-        }
-
-        cout << "=========================================================================" << endl;
-        cout << "=========================================================================" << endl;
-        cout << "                                 Services                                " << endl;
+        cout << "                             Services                                    " << endl;
         cout << "=========================================================================" << endl;
         cout << "=========================================================================" << endl;
 
@@ -877,6 +869,10 @@ int main()
             cin >> age;
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
+            cout << "Our Menu is as follows: " << endl;
+            for (int i = 1; i <= 10; i++){
+                cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
+            }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
 
@@ -914,6 +910,10 @@ int main()
             cin >> age;
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
+            cout << "Our Menu is as follows: " << endl;
+            for (int i = 1; i <= 10; i++){
+                cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
+            }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
 
@@ -936,6 +936,10 @@ int main()
             cin >> age;
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
+            cout << "Our Menu is as follows: " << endl;
+            for (int i = 1; i <= 10; i++){
+                cout << i << ". " << myPizzaShop->menu[i] << " - " << myPizzaShop->price[i] << endl;
+            }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
 
