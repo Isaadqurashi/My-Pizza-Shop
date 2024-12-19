@@ -44,7 +44,7 @@ BY Shumaz Saeed and Saad KHursid Qurashi
 > insights into the daily sales of the shop. Its main purpose is to
 > check the record of a particular Customer
 
-![](vertopal_05074bfb7092400396677b1a6f733501/media/image3.png)
+![](vertopal_05074bfb7092400396677b1a6f733501/media/image3.jpeg)
 
 
 ![](vertopal_05074bfb7092400396677b1a6f733501/media/image1.png)
