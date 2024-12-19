@@ -873,6 +873,10 @@ int main()
             }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
+            if(pizzaIndex < 1 or pizzaIndex > 10) {
+                cout << "There are only 1-10 options, please try again! \n";
+                continue;
+            }
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
 
@@ -914,6 +918,10 @@ int main()
             }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
+            if(pizzaIndex < 1 or pizzaIndex > 10) {
+                cout << "There are only 1-10 options, please try again! \n";
+                continue;
+            }
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
 
@@ -940,6 +948,10 @@ int main()
             }
             cout << "Enter the option for the pizza: ";
             cin >> pizzaIndex;
+            if(pizzaIndex < 1 or pizzaIndex > 10) {
+                cout << "There are only 1-10 options, please try again! \n";
+                continue;
+            }
             cout << "Enter the quantity of the pizza: ";
             cin >> quantity;
 
